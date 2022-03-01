@@ -29,6 +29,8 @@ class CreateHospitalSettingsTable extends Migration
             $table->string('favicon')->nullable();
             $table->string('size')->nullable();
             $table->string('type')->nullable();
+
+            // Social Media
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('whatsapp')->nullable();
