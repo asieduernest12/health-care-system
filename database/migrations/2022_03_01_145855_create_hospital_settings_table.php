@@ -23,7 +23,7 @@ class CreateHospitalSettingsTable extends Migration
             $table->string('fax')->nullable();
             $table->string('country')->nullable();
             $table->string('address')->nullable();
-            $table->date('established')->nullable();
+            $table->date('establish')->nullable();
             $table->string('email')->unique()->nullable();
             $table->string('logo')->nullable();
             $table->string('favicon')->nullable();
