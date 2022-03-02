@@ -15,6 +15,14 @@ class CreateBranchesTable extends Migration
     {
         Schema::create('branches', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->fulltext();
+            $table->text('address')->fulltext();
+            $table->text('phone')->fulltext();
+            $table->text('email')->unique()->fulltext();
+            $table->text('website')->unique()->fulltext()->nullable();
+            $table->tinyInteger('status')->default(0);
+            $table->foreignId('created_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('updated_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

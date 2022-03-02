@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +16,14 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
+            $table->tinyInteger('status')->default(0);
+            $table->string('available_days')->nullable();
+            $table->string('note')->nullable();
+            $table->foreignIdFor(User::class)->nullable()->constrained()->comment('the user_id is the doctor id in this table');
+            $table->foreignId('created_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('updated_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
