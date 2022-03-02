@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->tinyInteger('status')->default(0);
-
             $table->foreignIdFor(Patient::class)->nullable()->constrained()->comment('the user_id is the doctor id in this table');
             $table->foreignIdFor(User::class)->nullable()->constrained()->comment('the user_id is the doctor id in this table');
             $table->timestamps();
