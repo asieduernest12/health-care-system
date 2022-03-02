@@ -20,7 +20,7 @@ class CreateMedicalCertificatesTable extends Migration
             $table->id();
             $table->text('content')->nullable();
             $table->string('finalized')->default(0)->comment('Yes = 1, No = 0');
-            $table->string('status')->default(0);
+            $table->tinyInteger('status')->default(0);
             $table->foreignIdFor(Patient::class)->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignIdFor(PatientVisit::class)->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignIdFor(User::class)->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
