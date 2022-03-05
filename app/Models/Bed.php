@@ -25,6 +25,16 @@ class Bed extends Model
     ];
 
     // Relationship for the user model
+    public function room(): BelongsTo
+    {
+        return $this->belongsTo(Room::class, 'room_id', 'id');
+    }
+
+    public function bed_type(): BelongsTo
+    {
+        return $this->belongsTo(BedType::class, 'bed_type_id', 'id');
+    }
+
     public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by_id', 'id');
