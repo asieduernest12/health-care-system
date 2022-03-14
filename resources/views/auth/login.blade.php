@@ -1,10 +1,10 @@
-@extends('layouts.auth')
+@extends('layouts.app')
 
-{{-- @section('navbar')
+@section('navbar')
 @endsection
 
 @section('sidenav')
-@endsection --}}
+@endsection
 
 @section('content')
 <div class="account-box">

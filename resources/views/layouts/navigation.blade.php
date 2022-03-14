@@ -308,4 +308,5 @@
     <!-- /Mobile Menu -->
 
 </div>
-@endsection
+
+@show

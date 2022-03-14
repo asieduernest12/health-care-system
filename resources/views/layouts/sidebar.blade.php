@@ -11,7 +11,7 @@
                     <a href="{{ route('home') }}"><i class="la la-dashboard"></i> <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="clients.html"><i class="la la-users"></i> <span>HR Management</span></a>
+                    <a href="{{ route('users.index') }}"><i class="la la-users"></i> <span>HR Management</span></a>
                 </li>
                 <li>
                     <a href="clients.html"><i class="la la-users"></i> <span>Accounting Management</span></a>
@@ -55,4 +55,4 @@
         </div>
     </div>
 </div>
-@endsection
+@show

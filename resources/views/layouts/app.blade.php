@@ -10,15 +10,16 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}') }}" rel="stylesheet">
+    @livewireStyles
+    @flashStyle
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('jambasangsang/assets/img/favicon.jpg') }}">
@@ -80,8 +81,12 @@
     <!-- Custom JS -->
     <script src="{{ asset('jambasangsang/assets/js/app.js') }}"></script>
 
+    <!-- Scripts -->
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
-
+    @livewireScripts
+    @flashScript
+    @flashRender
 </body>
 
 </html>
