@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Jambas\Traits;
+namespace App\Http\Jambasangsang\Traits;
 
-trait updatableAndCreateable
+trait UpdatableAndCreateable
 {
     /* 
         This trait will insert the user that is loggedin

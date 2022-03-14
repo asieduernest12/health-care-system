@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Http\Jambas\Traits\updatableAndCreateable;
+use App\Http\Jambasangsang\Traits\UpdatableAndCreateable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Doctor extends Model
 {
     use HasFactory;
-    use updatableAndCreateable;
+    use UpdatableAndCreateable;
 
     protected $fillable = [
         'about_doctor',

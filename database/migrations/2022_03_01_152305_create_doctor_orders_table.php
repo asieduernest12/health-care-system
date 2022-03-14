@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\BillingInvoice;
 use App\Models\PatientVisit;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
