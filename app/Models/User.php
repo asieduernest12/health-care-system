@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Http\Jambas\Traits\updatableAndCreateable;
+use App\Http\Jambasangsang\Traits\UpdatableAndCreateable;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -12,11 +12,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Str;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    use updatableAndCreateable;
+    use UpdatableAndCreateable, HasRoles;
 
     /**
      * The attributes that are mass assignable.

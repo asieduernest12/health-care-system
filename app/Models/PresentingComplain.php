@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\Http\Jambas\Traits\updatableAndCreateable;
+use App\Http\Jambasangsang\Traits\updatableAndCreateable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class PresentingComplain extends Model
 {
     use HasFactory;
-    use updatableAndCreateable;
+    use UpdatableAndCreateable;
 
     protected $fillable = [
         'presenting_complain_type',
