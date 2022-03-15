@@ -38,6 +38,8 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('jambasangsang/assets/css/style.css') }}">
+
+    @stack('page-css')
 </head>
 
 <body>
@@ -87,6 +89,8 @@
     @livewireScripts
     @flashScript
     @flashRender
+
+    @stack('page-script')
 </body>
 
 </html>

@@ -1,7 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="table-responsive">
+<div>
 
 	@include('backend.admins.users.header')
 	
@@ -9,27 +6,28 @@
 		<thead>
 			<tr>
 				<th>First Name</th>
+				<th>Role</th>
 				<th>Last Name</th>
 				<th>Email</th>
 			</tr>
 		</thead>
 		<tbody>
+			@forelse ($users as $user)	
 			<tr>
-				<td>John</td>
-				<td>Doe</td>
-				<td>john@example.com</td>
+				<td>{{ $user->name }}</td>
+				<td>
+					@foreach ($user->getRoleNames() as $role)
+						{{ Str::ucfirst('-', ' ', $role) }}
+					@endforeach
+				</td>
+				<td>{{ $user->email }}</td>
+				<td>{{ $user->gender }}</td>
 			</tr>
-			<tr>
-				<td>Mary</td>
-				<td>Moe</td>
-				<td>mary@example.com</td>
-			</tr>
-			<tr>
-				<td>July</td>
-				<td>Dooley</td>
-				<td>july@example.com</td>
-			</tr>
+			@empty
+				<tr>
+					<td class="text-lg">No Users Found</td>
+				</tr>
+			@endforelse
 		</tbody>
 	</table>
 </div>
-@endsection

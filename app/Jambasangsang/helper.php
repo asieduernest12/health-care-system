@@ -37,14 +37,14 @@ class Helper
 
     public static function getPerPageNumber()
     {
-        return [
-            \constPerPageNumber::All => \constPerPageWord::All,
-            \constPerPageNumber::Five => \constPerPageWord::Five,
-            \constPerPageNumber::Ten => \constPerPageWord::Ten,
-            \constPerPageNumber::Fifteen => \constPerPageWord::Fifteen,
-            \constPerPageNumber::TwentyFive => \constPerPageWord::TwentyFive,
-            \constPerPageNumber::SeventyFive => \constPerPageWord::SeventyFive,
-            \constPerPageNumber::Hundred => \constPerPageWord::Hundred,
-        ];
+        // return [
+        //     \constPerPageNumber::All => \constPerPageWord::All,
+        //     \constPerPageNumber::Five => \constPerPageWord::Five,
+        //     \constPerPageNumber::Ten => \constPerPageWord::Ten,
+        //     \constPerPageNumber::Fifteen => \constPerPageWord::Fifteen,
+        //     \constPerPageNumber::TwentyFive => \constPerPageWord::TwentyFive,
+        //     \constPerPageNumber::SeventyFive => \constPerPageWord::SeventyFive,
+        //     \constPerPageNumber::Hundred => \constPerPageWord::Hundred,
+        // ];
     }
 }

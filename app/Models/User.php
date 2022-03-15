@@ -12,12 +12,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Http\Jambasangsang\Traits\UpdatableAndCreatable;
+use App\Http\Jambasangsang\Traits\UpdatableAndCreateable;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    use UpdatableAndCreatable, HasRoles;
+    use UpdatableAndCreateable, HasRoles;
 
     protected $fillable = [
         'title',
@@ -46,19 +47,30 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // Relationships for the User model
+    public function createdBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by_id', 'id');
+    }
+
+    public function updatedBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'updated_by_id', 'id');
+    }
+
     protected function name(): Attribute
     {
         return new Attribute(
-            get: fn ($value) => strtoupper($value),
-            set: fn ($value) => strtolower($value),
+            get: fn ($value) => ucfirst($value),
+            set: fn ($value) => Str::lower($value),
         );
     }
 
-    protected function created_at(): Attribute
+    protected function create_at(): Attribute
     {
         return new Attribute(
             get: fn ($value) => Carbon::parse($value)->toDateTimeString(),
-            set: fn ($value) => strtolower($value),
+            set: fn ($value) => date('Y-m-d', strtotime($value)),
         );
     }
 
